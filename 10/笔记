@@ -1,0 +1,28 @@
+一个进程的多个线程使用相同的地址空间，同一进程下的线程共享数据空间
+
+创建线程     pthread_create(&pth,NULL,thread,NULL)
+					&pth	指向线程的指针
+					NULL    线程属性
+					thread	运行的函数
+					NULL	传入函数的值
+
+
+pthread_join(pth,NULL)    系统调用会使main函数阻塞等待线程pth,直到线程退出才继续运行
+
+
+
+线程终止有2种情况：正常终止和非正常终止
+
+				正常退出：线程主动调用pthread_exit
+						在线程函数中return
+				非正常终止：在其他线程的干扰下   或者 由于自身运行出错
+
+
+
+
+
+
+pthread_cleanup_push()
+pthread_cleanup_pop()    二者成对出现
+
+在这二者之间的终止动作（包括pthread_exit和异常终止，不包括return ），都将执行pthread_cleanup_push()所指定的清理函数。执行的顺序是先压进栈的后执行。。即先入后出。：
