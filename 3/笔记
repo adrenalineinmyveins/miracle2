@@ -1,0 +1,25 @@
+1. argc 指令中参数的个数
+2. argv[]   指令中参数的位数  0  1  2。。。
+3. fread(*buffer,size,count,*stream)
+	buffer：用于接受数据的内存地址
+	size:要读的每个数据项的字节数，单位为字节
+	count:要读count个数据项，每个数据项size 个字节
+	stream:输入数据流
+
+4.feof()
+	检测流上的文件结束符，文件结束，返回非0值
+			      文件未结束，返回0
+5.bzer()
+	置字节字符串的前N个字节位0
+
+
+
+
+安装交叉编译环境
+1. $tar -zxvf ...
+2.记住安装路径
+3.把路径添加到环境变量PATH 中去。vim /etc/profile (不行的话root 模式)
+4.在profile 最后一行添加：export PATH=$PATH:路径/bin
+5.保存
+6.使用命令 source /etc/profile (可能没用)
+7。arm-linux-gcc -v 没出错说明安装完成
