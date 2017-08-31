@@ -5,7 +5,7 @@
 #include<string.h>
 #include<stdlib.h>
 
-int main()
+int main()   //git测试用（乱写的）
 {
 	int pipe_fd[2];
 	pid_t pid;
